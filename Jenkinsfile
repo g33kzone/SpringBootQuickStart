@@ -19,7 +19,7 @@ node {
    stage('Install') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
+         sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore spring-boot:run"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore spring-boot:run/)
       }
