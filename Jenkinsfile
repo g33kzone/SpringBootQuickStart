@@ -21,7 +21,7 @@ node {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
       } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
+         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore spring-boot:run/)
       }
    }
    stage('Results') {
