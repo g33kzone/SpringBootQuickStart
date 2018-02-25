@@ -1,6 +1,4 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ADD target/SpringBootQuickStart-0.0.1-SNAPSHOT.jar springbootquickstart.jar
-EXPOSE 8089
-EXPOSE 8085
-ENTRYPOINT ["java","-jar","/springbootquickstart.jar"]
+FROM anapsix/alpine-java
+LABEL maintainer="manish6385@gmail.com"
+COPY /target/SpringBootQuickStart-0.0.1-SNAPSHOT.jar /home/springbootquickstart.jar
+CMD ["java","-jar","/home/springbootquickstart.jar"]
