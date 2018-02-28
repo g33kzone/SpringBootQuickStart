@@ -28,5 +28,11 @@ pipeline {
         }
       }
     }
+    stage('Docker Deploy') {
+      agent any
+      steps {
+        sh 'docker run -p 8085:8080 -d manish6385/springboot-quickstart:latest'
+      }
+    }
   }
 }
